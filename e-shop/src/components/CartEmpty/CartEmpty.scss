@@ -1,0 +1,12 @@
+.cartempty {
+  &-container {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-content {
+    text-transform: uppercase;
+  }
+}

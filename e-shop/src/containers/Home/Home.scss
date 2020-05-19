@@ -1,0 +1,23 @@
+.pdtlst {
+  color: #333;
+
+  &-h2 {
+    font-weight: 200;
+    text-align: center;
+  }
+
+  &-p {
+    font-size: 12px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+}

@@ -1,0 +1,19 @@
+.product {
+  &-container {
+    // width: calc((100%-200px) / 3);
+    display: flex;
+    margin: 1rem 0;
+  }
+
+  &-image {
+    height: 200px;
+    width: 200px;
+  }
+
+  &-image-wrapper {
+    // padding: 10px;
+  }
+
+  &-button {
+  }
+}
