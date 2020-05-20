@@ -24,7 +24,6 @@ class Home extends React.Component {
           <div className="pdtlst-content">
             <ProductConsumer>
               {(value) => {
-                console.log(value);
                 return value.products.map((product) => {
                   return <Product key={product.id} product={product} />;
                 });

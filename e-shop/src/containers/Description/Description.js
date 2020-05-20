@@ -1,6 +1,7 @@
 import React from "react";
 import { ProductConsumer } from "../../components/Context/Context";
 import { Link } from "react-router-dom";
+import "./Description.scss";
 
 class Description extends React.Component {
   render() {
@@ -10,19 +11,20 @@ class Description extends React.Component {
           const { id, img, info, price, title, inCart } = value.detailProduct;
 
           return (
-            <div className="">
-              <div className="">
+            <div className="description-container">
+              <div className="description-content">
                 <div className="description-image-wrapper">
-                  <img src={img} className="" alt="Product" />
+                  <img src={img} className="description-image" alt="Product" />
                 </div>
-                <div className="">
-                  <h2>{title}</h2>
-                  <h3>${price}</h3>
-                  <p className="">{info}</p>
+                <div className="description-content-wrapper">
+                  <h2 className="description-title">{title}</h2>
+                  <h3 className="description-price">${price}</h3>
+                  <p className="description-p">{info}</p>
                   <Link to="/">
-                    <button>Back To Products</button>
+                    <button className="btn-light">Back To Products</button>
                   </Link>
                   <button
+                    className="btn-dark"
                     disabled={inCart ? true : false}
                     onClick={() => {
                       value.addToCart(id);
@@ -33,7 +35,7 @@ class Description extends React.Component {
                   </button>
                 </div>
               </div>
-              <div className="">
+              <div className="description-reviews">
                 <h3>Reviews</h3>
               </div>
             </div>

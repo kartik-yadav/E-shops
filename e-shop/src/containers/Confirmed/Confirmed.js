@@ -13,7 +13,7 @@ class Confirmed extends React.Component {
             doloribus at, facere ipsam laboriosam hic.
           </p>
           <Link to="/">
-            <button>Continue Shopping</button>
+            <button className="btn-dark">Continue Shopping</button>
           </Link>
         </div>
       </div>

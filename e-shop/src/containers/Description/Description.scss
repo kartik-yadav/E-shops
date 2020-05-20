@@ -1,0 +1,46 @@
+.description {
+  &-container {
+    min-height: 79vh;
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  &-image {
+    margin: 0 150px;
+    height: 300px;
+    transition: all 0.5s linear;
+  }
+
+  &-image-wrapper {
+    overflow: hidden;
+
+    &:hover .description-image {
+      transform: scale(1.2);
+    }
+  }
+
+  &-content-wrapper {
+    height: 300px;
+    border-left: 1px solid #e6e6e6;
+    padding: 0 30px;
+  }
+
+  &-title,
+  &-price {
+    font-weight: 400;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  &-p {
+    font-size: 12px;
+    color: #b3b3b3;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 1.4;
+  }
+}

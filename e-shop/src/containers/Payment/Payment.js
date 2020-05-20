@@ -58,10 +58,10 @@ class Payment extends React.Component {
         </div>
         <div>
           <Link to="/Confirmed">
-            <button>Pay Now</button>
+            <button className="btn-dark">Pay Now</button>
           </Link>
           <Link to="/Shipping">
-            <button>Cancel</button>
+            <button className="btn-light">Cancel</button>
           </Link>
         </div>
       </div>

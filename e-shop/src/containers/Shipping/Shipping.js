@@ -59,10 +59,10 @@ class Shipping extends React.Component {
         </div>
         <div>
           <Link to="/Payment">
-            <button>Next</button>
+            <button className="btn-dark">Next</button>
           </Link>
           <Link to="/Cart">
-            <button>Cancel</button>
+            <button className="btn-light">Cancel</button>
           </Link>
         </div>
       </div>

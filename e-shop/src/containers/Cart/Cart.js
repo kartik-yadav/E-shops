@@ -35,10 +35,10 @@ class Cart extends React.Component {
                   </div>
                   <div>
                     <Link to="/Shipping">
-                      <button>Next</button>
+                      <button className="btn-dark">Next</button>
                     </Link>
                     <Link to="/">
-                      <button>Cancel</button>
+                      <button className="btn-light">Cancel</button>
                     </Link>
                   </div>
                 </div>
