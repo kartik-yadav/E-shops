@@ -14,6 +14,7 @@ class ProductProvider extends Component {
     cartTax: 0,
     cartTotal: 0,
   };
+
   componentDidMount() {
     this.setProducts();
   }
@@ -27,6 +28,20 @@ class ProductProvider extends Component {
     this.setState(() => {
       return { products };
     }, this.checkCartItems);
+  };
+
+  handleChange = () => {
+    let inputValue = document.getElementById("search-bar").value.toLowerCase();
+    let products = [];
+    storeProducts.forEach((item) => {
+      const singleItems = { ...item };
+      if (singleItems.title.toLowerCase().includes(inputValue)) {
+        products = [...products, singleItems];
+      }
+    });
+    this.setState(() => {
+      return { products };
+    });
   };
 
   getItem = (id) => {
@@ -57,19 +72,6 @@ class ProductProvider extends Component {
         detailProduct: { ...product },
       };
     }, this.addTotals);
-  };
-
-  openModal = (id) => {
-    const product = this.getItem(id);
-    this.setState(() => {
-      return { modalProduct: product, modalOpen: true };
-    });
-  };
-
-  closeModal = () => {
-    this.setState(() => {
-      return { modalOpen: false };
-    });
   };
 
   increment = (id) => {
@@ -175,9 +177,8 @@ class ProductProvider extends Component {
         value={{
           ...this.state,
           handleDetail: this.handleDetail,
+          handleChange: this.handleChange,
           addToCart: this.addToCart,
-          openModal: this.openModal,
-          closeModal: this.closeModal,
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,

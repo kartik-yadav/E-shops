@@ -23,7 +23,6 @@ class Product extends React.Component {
                   disabled={inCart ? true : false}
                   onClick={() => {
                     value.addToCart(id);
-                    value.openModal(id);
                   }}
                 >
                   {inCart ? <p disabled>In cart</p> : <p>Add To Cart</p>}

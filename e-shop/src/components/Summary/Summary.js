@@ -8,15 +8,15 @@ import SummaryEmpty from "../SummaryEmpty/SummaryEmpty";
 class Summary extends React.Component {
   render() {
     return (
-      <div>
+      <div className="summary-container">
         <ProductConsumer>
           {(value) => {
             const { cart } = value;
             if (cart.length > 0) {
               return (
                 <div>
-                  <h3>Summary</h3>
-                  <div>
+                  <h3 className="summary-h3">Summary</h3>
+                  <div className="summary-content">
                     <SummaryList value={value} />
                   </div>
                   <p>

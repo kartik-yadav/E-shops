@@ -7,14 +7,26 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-container">
-        <div className="home-search">
-          <input
-            type="text"
-            id="home-search-bar"
-            // onKeyUp={this.filter}
-            placeholder="Search..."
-          />
+        <div className="home-heading">
+          <h2 className="home-heading-main">Tagline describing your e-shop</h2>
         </div>
+        <ProductConsumer>
+          {(value) => {
+            return (
+              <div className="home-search">
+                <div>
+                  <input
+                    type="text"
+                    id="search-bar"
+                    onKeyUp={() => value.handleChange()}
+                    placeholder="Search..."
+                  />
+                  <button className="btn-dark">Submit</button>
+                </div>
+              </div>
+            );
+          }}
+        </ProductConsumer>
         <div className="pdtlst">
           <h2 className="pdtlst-h2">Product Listing</h2>
           <p className="pdtlst-p">

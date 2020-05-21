@@ -1,22 +1,30 @@
-.progress {
+.cart {
+  &-wrapper {
+    min-height: 79vh;
+  }
+
   &-container {
-    background: lightgray;
-    height: 300px;
+    padding: 0 2rem;
   }
 
   &-content {
-    color: #b3b3b3;
-    list-style: none;
     display: flex;
+    justify-content: space-around;
   }
 
-  &-list {
-    padding: 10px 20px;
-    border-bottom: 1px solid #b3b3b3;
+  &-h2 {
+    border-bottom: 1px solid #999999;
+    padding-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin: 10px 0;
   }
 
-  &-active {
-    color: #333;
-    border-bottom: 1px solid #333;
+  &-content-left {
+    border-bottom: 1px solid #999999;
+  }
+
+  &-lower {
+    margin: 0 10.5rem;
   }
 }

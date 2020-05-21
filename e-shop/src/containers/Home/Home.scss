@@ -1,5 +1,33 @@
+.home {
+  &-heading {
+    padding: 50px 0 20px;
+    background: lightgray;
+
+    &-main {
+      font-weight: 200;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  &-search {
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+}
+
+#search-bar {
+  height: 27px;
+  padding-left: 5px;
+  width: 200px;
+  margin-right: 10px;
+}
+
 .pdtlst {
   color: #333;
+  padding-top: 50px;
 
   &-h2 {
     font-weight: 200;
@@ -11,7 +39,7 @@
     width: 300px;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 10px auto 30px;
   }
 
   &-content {

@@ -1,31 +1,93 @@
-.progress {
-  &-container {
-    background: #e6e6e6;
-    height: 100px;
-    padding: 20px;
-    overflow: hidden;
-    border-top: 1px solid white;
-  }
-
-  &-content {
-    color: #999999;
-    list-style: none;
-    display: flex;
-  }
-
-  &-list {
-    padding: 10px 130px;
-    border-bottom: 1px solid #999999;
-  }
-
-  &-active {
-    color: #333;
-    border-bottom: 1px solid #333;
-  }
-}
-
 .shipping {
   &-container {
     min-height: 79vh;
   }
+
+  &-content {
+    padding: 2rem 2rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-left {
+    width: 75%;
+    border-bottom: 1px solid #999999;
+  }
+
+  &-form {
+    padding: 1.5rem 0;
+    width: 60%;
+
+    input {
+      width: 48%;
+      display: inline-block;
+      padding: 5px;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &-form-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-form-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &-charges {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #999999;
+    padding-top: 1rem;
+  }
+
+  &-charges-content {
+    display: flex;
+    border: 1px solid #999999;
+    width: 48%;
+    align-items: center;
+    padding: 10px;
+
+    input {
+      margin-top: 10px;
+      width: 30px;
+      height: 20px;
+    }
+  }
+
+  &-charges-description {
+    padding: 10px;
+
+    p {
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    p:first-child {
+      font-size: 1rem;
+    }
+  }
+
+  &-lower {
+    padding: 0 2rem;
+    margin-bottom: 80px;
+  }
+
+  &-h3 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #999999;
+  }
 }
+
+// .toggler:checked + .shipping-charges-content {
+//   background: #999999;
+// }

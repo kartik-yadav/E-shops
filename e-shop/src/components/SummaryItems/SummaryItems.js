@@ -6,13 +6,13 @@ class SummaryItems extends React.Component {
     const { title, img, price } = this.props.item;
 
     return (
-      <div className="">
-        <div className="">
-          <img src={img} alt="product" />
+      <div className="summaryitems-container">
+        <div className="summaryitems-img-wrapper">
+          <img src={img} alt="product" className="summaryitems-img" />
         </div>
-        <div>
-          <h3>{title}</h3>
-          <h4>${price}</h4>
+        <div className="summaryitems-content">
+          <h3 className="summaryitems-h3">{title}</h3>
+          <h4 className="summaryitems-h4">${price}</h4>
         </div>
       </div>
     );

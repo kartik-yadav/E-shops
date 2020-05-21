@@ -23,7 +23,7 @@
     text-decoration: none;
 
     &:hover {
-      color: #ff3300;
+      color: #ff1a1a;
     }
   }
 
@@ -31,5 +31,22 @@
     background: #333;
     color: white;
     padding: 5px 10px;
+  }
+
+  &-special-base {
+    position: relative;
+  }
+
+  &-special-qty {
+    display: block;
+    position: absolute;
+    min-height: 1rem;
+    min-width: 1rem;
+    text-align: center;
+    top: -10px;
+    right: 10px;
+    border-radius: 50%;
+    background: #ff1a1a;
+    color: white;
   }
 }

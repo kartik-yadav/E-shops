@@ -6,24 +6,24 @@ class SummaryTotal extends React.Component {
     const { cartSubTotal, cartTax, cartTotal, cart } = this.props.value;
     const emptyCart = cart.length === 0 ? true : false;
     return (
-      <div className="">
+      <div className="summarytotal-container">
         {!emptyCart && (
-          <div className="">
-            <div className="">
-              <h5 className="">
+          <div>
+            <div className="summarytotal-content">
+              <h5 className="summarytotal-h5">
                 <span>SUBTOTAL</span>
                 <span>${cartSubTotal}</span>
               </h5>
-              <h5 className="">
+              <h5 className="summarytotal-h5">
                 <span>SHIPPING</span>
                 <span>FREE</span>
               </h5>
-              <h5 className="">
+              <h5 className="summarytotal-h5">
                 <span>TAXES</span>
                 <span>${cartTax}</span>
               </h5>
             </div>
-            <h4>
+            <h4 className="summarytotal-h4">
               <span>TOTAL</span>
               <span>${cartTotal}</span>
             </h4>

@@ -1,0 +1,21 @@
+.summarytotal {
+  &-container {
+    padding: 10px;
+    width: 270px;
+  }
+
+  &-content {
+    padding-bottom: 10px;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+
+  &-h5,
+  &-h4 {
+    display: flex;
+    color: #999999;
+    font-weight: 400;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+}

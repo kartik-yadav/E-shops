@@ -7,42 +7,47 @@ class CartItems extends React.Component {
     const { increment, decrement, removeItem } = this.props.value;
 
     return (
-      <div className="">
-        <div className="">
-          <img src={img} alt="product" />
+      <div className="carditems-container">
+        <div className="carditems-img-wrapper">
+          <img src={img} alt="product" className="carditems-img" />
         </div>
-        <div>
-          <h3>{title}</h3>
-          <span className="" onClick={() => removeItem(id)}>
-            <i className="fas fa-trash" />
-          </span>
-        </div>
-        <div>
-          <p>Lorem ipsum dolor amet offal butcher quinoa</p>
-          <h4>${price}</h4>
-        </div>
-        <div>
-          <span>{count}pcs</span>
-          <div>
-            <span
-              className=""
-              onClick={() => {
-                return increment(id);
-              }}
-            >
-              <i className="fas fa-sort-up"></i>
-            </span>
-            <span
-              className=""
-              onClick={() => {
-                return decrement(id);
-              }}
-            >
-              <i className="fas fa-sort-down"></i>
+
+        <div className="carditems-content">
+          <div className="carditems-heading">
+            <h3 className="carditems-h3">{title}</h3>
+            <span className="carditems-del" onClick={() => removeItem(id)}>
+              <i className="fas fa-trash" />
             </span>
           </div>
+          <div className="carditems-align">
+            <div>
+              <p className="carditems-p">Lorem ipsum dolor amet offal</p>
+              <h4 className="carditems-h4">${price}</h4>
+            </div>
+            <div className="carditems-qty">
+              <span className="carditems-pcs">{count}pcs</span>
+              <div className="carditems-toggle">
+                <span
+                  className="carditems-up"
+                  onClick={() => {
+                    return increment(id);
+                  }}
+                >
+                  <i className="fas fa-sort-up"></i>
+                </span>
+                <span
+                  className="carditems-down"
+                  onClick={() => {
+                    return decrement(id);
+                  }}
+                >
+                  <i className="fas fa-sort-down special-down"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <h5 className="carditems-h5">Item Total : ${total}</h5>
         </div>
-        <h5>item total : ${total}</h5>
       </div>
     );
   }

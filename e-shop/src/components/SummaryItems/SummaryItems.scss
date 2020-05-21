@@ -1,0 +1,39 @@
+.summaryitems {
+  &-container {
+    padding: 10px;
+    display: flex;
+    width: fit-content;
+
+    &:hover {
+      border: 0.04rem solid rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &-img-wrapper {
+    border: 1px solid #333;
+    overflow: hidden;
+
+    &:hover .summaryitems-img {
+      transform: scale(1.2);
+    }
+  }
+
+  &-img {
+    width: 100px;
+    height: 100px;
+    transition: all 0.5s linear;
+  }
+
+  &-h3,
+  &-h4 {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  &-content {
+    padding-left: 1rem;
+    width: 150px;
+  }
+}

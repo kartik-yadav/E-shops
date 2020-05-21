@@ -7,11 +7,11 @@
 .btn-dark,
 .btn-light {
   margin: 20px 20px 20px 0;
-  padding: 5px;
+  padding: 5px 10px;
 
   &:hover {
     cursor: pointer;
-    color: #ff3300;
+    color: #ff1a1a;
   }
 }
 
@@ -25,4 +25,40 @@
   color: #4d4d4d;
   background: #e6e6e6;
   border: 1px solid #e6e6e6;
+}
+
+.progress {
+  &-container {
+    background: #e6e6e6;
+    height: 100px;
+    padding: 20px;
+    overflow: hidden;
+    border-top: 1px solid white;
+  }
+
+  &-content {
+    color: #999999;
+    list-style: none;
+    display: flex;
+  }
+
+  &-list {
+    padding: 10px 165px;
+    cursor: pointer;
+    border-bottom: 1px solid #999999;
+  }
+
+  &-active {
+    color: #333;
+    border-bottom: 1px solid #333;
+  }
+
+  &-a {
+    text-decoration: none;
+    color: #999999;
+
+    &:hover {
+      color: #ff1a1a;
+    }
+  }
 }

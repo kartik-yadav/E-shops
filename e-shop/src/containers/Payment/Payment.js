@@ -9,8 +9,16 @@ class Payment extends React.Component {
       <div className="payment-container">
         <div className="progress-container">
           <ul className="progress-content">
-            <li className="progress-list">1. Shopping Cart</li>
-            <li className="progress-list">2. Shipping Details</li>
+            <li className="progress-list">
+              <Link to="/Cart" className="progress-a">
+                1. Shopping Cart
+              </Link>
+            </li>
+            <li className="progress-list">
+              <Link to="/Shipping" className="progress-a">
+                2. Shipping Details
+              </Link>
+            </li>
             <li className="progress-list progress-active">
               3. Payment Options
             </li>

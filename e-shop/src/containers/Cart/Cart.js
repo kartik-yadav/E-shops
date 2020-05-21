@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 class Cart extends React.Component {
   render() {
     return (
-      <div>
+      <div className="cart-wrapper">
         <ProductConsumer>
           {(value) => {
             const { cart } = value;
@@ -21,25 +21,32 @@ class Cart extends React.Component {
                       <li className="progress-list progress-active">
                         1. Shopping Cart
                       </li>
-                      <li className="progress-list">2. Shipping Details</li>
+                      <li className="progress-list">
+                        <Link to="/Shipping" className="progress-a">
+                          2. Shipping Details
+                        </Link>
+                      </li>
                       <li className="progress-list">3. Payment Options</li>
                     </ul>
                   </div>
-                  <div>
-                    <div>
-                      <CartList value={value} />
+                  <div className="cart-container">
+                    <div className="cart-content">
+                      <div className="cart-content-left">
+                        <h2 className="cart-h2">Shopping Cart</h2>
+                        <CartList value={value} />
+                      </div>
+                      <div className="cart-content-right">
+                        <CartTotal value={value} />
+                      </div>
                     </div>
-                    <div>
-                      <CartTotal value={value} />
+                    <div className="cart-lower">
+                      <Link to="/Shipping">
+                        <button className="btn-dark">Next</button>
+                      </Link>
+                      <Link to="/">
+                        <button className="btn-light">Cancel</button>
+                      </Link>
                     </div>
-                  </div>
-                  <div>
-                    <Link to="/Shipping">
-                      <button className="btn-dark">Next</button>
-                    </Link>
-                    <Link to="/">
-                      <button className="btn-light">Cancel</button>
-                    </Link>
                   </div>
                 </div>
               );

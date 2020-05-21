@@ -9,57 +9,110 @@ class Shipping extends React.Component {
       <div className="shipping-container">
         <div className="progress-container">
           <ul className="progress-content">
-            <li className="progress-list">1. Shopping Cart</li>
+            <li className="progress-list">
+              <Link to="/Cart" className="progress-a">
+                1. Shopping Cart
+              </Link>
+            </li>
             <li className="progress-list progress-active">
               2. Shipping Details
             </li>
-            <li className="progress-list">3. Payment Options</li>
+            <li className="progress-list">
+              <Link to="/Payment" className="progress-a">
+                3. Payment Options
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="shipping-content">
-          <h3>Shipping Details</h3>
-          <form>
-            <input type="text" id="fname" placeholder="First Name" />
-            <input type="text" id="lname" placeholder="Last Name" />
-            <input type="text" id="add" placeholder="Address" />
-            <input type="text" id="adds" placeholder="Address2" />
-            <input list="country" id="ctry" placeholder="Country" />
-            <datalist id="country">
-              <option value="India" />
-              <option value="Israel" />
-              <option value="Canada" />
-              <option value="Iran" />
-              <option value="Italy" />
-            </datalist>
-            <input type="text" id="city" placeholder="City" />
-            <input type="text" id="zip" placeholder="Zip/Postal Code" />
-            <input type="text" id="pno" placeholder="Phone Number" />
-            <div>
-              <div>
-                <input type="radio" id="fs" name="delievery" checked />
+          <div className="shipping-left">
+            <h3 className="shipping-h3">Shipping Details</h3>
+            <form className="shipping-form" id="my-form" action="#">
+              <div className="shipping-form-container">
+                <input
+                  type="text"
+                  id="fname"
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  id="lname"
+                  placeholder="Last Name"
+                  required
+                />
               </div>
-              <div>
-                <p>Free Shipping</p>
-                <p>Between 2-5 working days</p>
+              <div className="shipping-form-address">
+                <input type="text" id="add" placeholder="Address" required />
+                <input type="text" id="adds" placeholder="Address2" />
               </div>
-            </div>
-            <div>
-              <div>
-                <input type="radio" id="ndd" name="delievery" />
+              <div className="shipping-form-container">
+                <input
+                  list="country"
+                  id="ctry"
+                  placeholder="Country"
+                  required
+                />
+                <datalist id="country">
+                  <option value="India" />
+                  <option value="Israel" />
+                  <option value="Canada" />
+                  <option value="Iran" />
+                  <option value="Italy" />
+                </datalist>
+                <input type="text" id="city" placeholder="City" required />
               </div>
-              <div>
-                <p>Next Day Delievery - $20</p>
-                <p>24 hours from checkout</p>
+              <div className="shipping-form-container">
+                <input
+                  type="number"
+                  id="zip"
+                  placeholder="Zip/Postal Code"
+                  required
+                />
+                <input
+                  type="number"
+                  id="pno"
+                  placeholder="Phone Number"
+                  required
+                />
               </div>
-            </div>
-          </form>
+              <div className="shipping-charges">
+                <div className="shipping-charges-content">
+                  <input
+                    type="radio"
+                    id="fs"
+                    name="delievery"
+                    className="toggler"
+                  />
+                  <div className="shipping-charges-description">
+                    <p>Free Shipping</p>
+                    <p>Between 2-5 working days</p>
+                  </div>
+                </div>
+                <div className="shipping-charges-content">
+                  <input
+                    type="radio"
+                    id="ndd"
+                    name="delievery"
+                    className="toggler"
+                  />
+                  <div className="shipping-charges-description">
+                    <p>Next Day Delievery - $20</p>
+                    <p>24 hours from checkout</p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div className="shipping-right">
+            <Summary />
+          </div>
         </div>
-        <div>
-          <Summary />
-        </div>
-        <div>
+        <div className="shipping-lower">
           <Link to="/Payment">
-            <button className="btn-dark">Next</button>
+            <button type="submit" form="my-form" className="btn-dark">
+              Next
+            </button>
           </Link>
           <Link to="/Cart">
             <button className="btn-light">Cancel</button>
