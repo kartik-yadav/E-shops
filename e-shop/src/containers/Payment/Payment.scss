@@ -2,4 +2,211 @@
   &-container {
     min-height: 79vh;
   }
+
+  &-wrapper {
+    // background: url("../../assests/images/sc.jpg") no-repeat center center /
+    //   cover;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 15rem 0 2rem;
+  }
+
+  &-content {
+    width: 70%;
+    margin-top: 5px;
+  }
+
+  &-h3 {
+    font-weight: 400;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #999999;
+    width: 80%;
+  }
+
+  &-cc {
+    padding: 1rem;
+    border: 1px solid #999999;
+    width: 80%;
+    margin: 1.5rem 0;
+
+    &-heading {
+      display: flex;
+    }
+
+    &-h4 {
+      font-weight: 400;
+      margin-left: 1rem;
+    }
+
+    &-p {
+      font-size: 12px;
+      margin: 10px 0;
+      margin-left: 1rem;
+    }
+
+    &-toggler {
+      width: 25px;
+      height: 25px;
+      margin-top: 10px;
+    }
+  }
+
+  &-input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+    input {
+      padding: 10px;
+
+      &:first-child {
+        width: 40%;
+      }
+
+      &:nth-child(2),
+      &:last-child {
+        width: 20%;
+      }
+    }
+  }
+
+  &-input {
+    width: 30%;
+  }
+
+  &-pp-wrapper {
+    width: 80%;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+
+  &-pp {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 1rem;
+    border: 1px solid #999999;
+    width: 100%;
+    margin: 1.5rem 0;
+
+    &-content {
+      padding-left: 1rem;
+    }
+
+    &-h4 {
+      font-weight: 400;
+    }
+
+    &-p {
+      margin: 10px 0;
+      font-size: 12px;
+    }
+
+    &-toggler {
+      margin-top: 1rem;
+      height: 25px;
+      width: 25px;
+    }
+  }
+
+  &-summary {
+    margin-right: 20px;
+  }
+
+  &-lower {
+    // background: url("../../assests/images/sc.jpg") no-repeat center center /
+    //   cover;
+    padding-left: 2rem;
+  }
+
+  &-full {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+  }
+}
+
+.paypal-logo-wrapper {
+  margin: 8px 10px 0;
+}
+
+.paypal-logo {
+  height: 50px;
+  width: 100px;
+}
+
+@media (max-width: 768px) {
+  .payment {
+    &-wrapper {
+      flex-direction: column;
+      padding-right: 10rem;
+    }
+
+    &-content {
+      width: 100%;
+    }
+
+    &-h3 {
+      width: 100%;
+    }
+
+    &-cc {
+      width: 100%;
+    }
+
+    &-pp-toggler {
+      width: 19.5px;
+    }
+
+    &-pp-wrapper {
+      width: 100%;
+    }
+
+    &-input-wrapper {
+      input {
+        border: 1px solid #999999;
+      }
+
+      & + input {
+        border: 1px solid #999999;
+      }
+    }
+
+    &-summary {
+      margin-top: 1rem;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #999999;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .payment {
+    &-wrapper {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+    &-input-wrapper {
+      flex-direction: column;
+      margin: 0;
+      margin-top: 10px;
+    }
+    &-input-wrapper input:first-child,
+    &-input-wrapper input:nth-child(2),
+    &-input-wrapper input:last-child {
+      width: 100%;
+    }
+
+    &-input {
+      width: 100%;
+      // border: 1px solid #999999;
+      margin-bottom: 1rem;
+    }
+
+    &-full {
+      margin: 0;
+    }
+    &-cc-p {
+      width: 17.1rem;
+    }
+  }
 }

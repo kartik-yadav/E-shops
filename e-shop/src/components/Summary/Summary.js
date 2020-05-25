@@ -19,10 +19,20 @@ class Summary extends React.Component {
                   <div className="summary-content">
                     <SummaryList value={value} />
                   </div>
-                  <p>
-                    <span>HAVE A VOUCHER?</span>
-                    <i className="fas fa-sort-down"></i>
-                  </p>
+                  <input
+                    list="voucher"
+                    id="vchr"
+                    placeholder="HAVE A VOUCHER?"
+                    onKeyUp={() => {
+                      value.addDiscount();
+                    }}
+                  />
+                  <datalist id="voucher">
+                    <option value="OFF10" />
+                    <option value="OFF20" />
+                    <option value="OFF50" />
+                    <option value="OFF100" />
+                  </datalist>
                   <div>
                     <SummaryTotal value={value} />
                   </div>

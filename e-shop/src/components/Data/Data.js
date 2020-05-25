@@ -1,8 +1,9 @@
 export const storeProducts = [
   {
     id: 1,
-    title: "Google Pixel - Black",
+    title: "Google Pixel",
     img: "img/product-1.png",
+    imgs: "img/product-11.png",
     price: 500,
     company: "GOOGLE",
     info:
@@ -13,8 +14,9 @@ export const storeProducts = [
   },
   {
     id: 2,
-    title: "Samsung S7",
+    title: "Samsung S8",
     img: "img/product-2.png",
+    imgs: "img/product-22.png",
     price: 200,
     company: "SAMSUNG",
     info:
@@ -25,8 +27,9 @@ export const storeProducts = [
   },
   {
     id: 3,
-    title: "HTC 10 - Black",
+    title: "HTC 10",
     img: "img/product-3.png",
+    imgs: "img/product-33.png",
     price: 400,
     company: "htc",
     info:
@@ -37,8 +40,9 @@ export const storeProducts = [
   },
   {
     id: 4,
-    title: "HTC 10 - White",
+    title: "OnePlus 5",
     img: "img/product-4.png",
+    imgs: "img/product-44.png",
     price: 350,
     company: "htc",
     info:
@@ -49,8 +53,9 @@ export const storeProducts = [
   },
   {
     id: 5,
-    title: "HTC Desire 626s",
+    title: "OnePlus 6",
     img: "img/product-5.png",
+    imgs: "img/product-55.png",
     price: 240,
     company: "htc",
     info:
@@ -63,6 +68,7 @@ export const storeProducts = [
     id: 6,
     title: "Vintage Iphone",
     img: "img/product-6.png",
+    imgs: "img/product-66.png",
     price: 450,
     company: "apple",
     info:
@@ -75,6 +81,7 @@ export const storeProducts = [
     id: 7,
     title: "Iphone 7",
     img: "img/product-7.png",
+    imgs: "img/product-77.png",
     price: 600,
     company: "apple",
     info:
@@ -87,6 +94,7 @@ export const storeProducts = [
     id: 8,
     title: "Smashed Iphone",
     img: "img/product-8.png",
+    imgs: "img/product-88.png",
     price: 200,
     company: "apple",
     info:
@@ -99,6 +107,7 @@ export const storeProducts = [
     id: 9,
     title: "Iphone 10",
     img: "img/product-9.png",
+    imgs: "img/product-99.png",
     price: 700,
     company: "apple",
     info:
@@ -113,6 +122,7 @@ export const detailProduct = {
   id: 1,
   title: "Google Pixel - Black",
   img: "img/product-1.png",
+  imgs: "img/product-11.png",
   price: 500,
   company: "google",
   info:

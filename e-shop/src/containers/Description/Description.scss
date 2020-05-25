@@ -12,6 +12,7 @@
   &-image {
     margin: 0 150px;
     height: 300px;
+    width: 300px;
     transition: all 0.5s linear;
   }
 
@@ -36,11 +37,134 @@
     border-bottom: 1px solid #e6e6e6;
   }
 
+  &-price {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &-p {
     font-size: 12px;
     color: #b3b3b3;
     padding: 1rem 0;
     border-bottom: 1px solid #e6e6e6;
     line-height: 1.4;
+  }
+
+  &-reviews {
+    &-h3 {
+      font-size: 2rem;
+      font-weight: 300;
+      margin: 2.5rem 0 0 2.5rem;
+    }
+
+    &-content {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 2rem;
+      padding: 2.5rem;
+    }
+
+    &-icon {
+      border: 1px solid #333333;
+      padding: 1rem;
+      border-radius: 50%;
+    }
+
+    &-h4 {
+      margin-top: 5px;
+      color: #333333;
+      font-weight: 400;
+    }
+
+    &-middle-p {
+      font-size: 12px;
+      margin: 3px 0;
+    }
+
+    &-p {
+      margin-top: 5px;
+      color: #b3b3b3;
+      padding-left: 10px;
+    }
+  }
+}
+
+#mdl {
+  padding: 5px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  border: none;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+
+  &:hover {
+    outline: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    &-image {
+      margin: 0;
+      margin-left: 2rem;
+      height: 300px;
+      width: 300px;
+    }
+
+    &-p {
+      font-size: 10px;
+      padding: 0.5rem 0;
+      line-height: 1;
+    }
+
+    &-reviews-icon {
+      height: 4rem;
+      margin-top: 3.5rem;
+    }
+
+    &-reviews-h4 {
+      margin-top: 3.5rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .description {
+    &-content-wrapper {
+      border-top: 1px solid #e6e6e6;
+      margin-top: 1rem;
+    }
+
+    &-content {
+      grid-template-columns: none;
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    &-reviews {
+      &-h3 {
+        text-align: center;
+        margin-right: 2.3rem;
+      }
+
+      &-content {
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-icon {
+        margin: 2rem 6.7rem;
+        width: 4rem;
+      }
+
+      &-name {
+        padding-left: 6.5rem;
+        padding-bottom: 2rem;
+      }
+
+      &-h4 {
+        margin-top: 0;
+      }
+    }
   }
 }

@@ -10,7 +10,10 @@ class Navbar extends React.Component {
         <ul className="navbar-ul">
           <li className="navbar-li navbar-m">
             <Link to="/" className="navbar-a">
-              Home
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>Home
             </Link>
           </li>
           <li className="navbar-li navbar-m">

@@ -33,6 +33,13 @@ class Product extends React.Component {
         </ProductConsumer>
         <div className="product-content">
           <h4 className="product-title">{title}</h4>
+          <span className="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </span>
           <h5 className="product-price">${price}</h5>
         </div>
       </div>

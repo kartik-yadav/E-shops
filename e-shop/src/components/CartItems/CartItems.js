@@ -2,10 +2,21 @@ import React from "react";
 import "./CartItems.scss";
 
 class CartItems extends React.Component {
+  state = {
+    checked: true,
+  };
+  handleQty = () => {
+    const { count } = this.props.item;
+    if (count > 9) {
+      this.setState({ checked: false });
+    } else {
+      this.setState({ checked: true });
+    }
+  };
+
   render() {
     const { id, title, img, price, total, count } = this.props.item;
     const { increment, decrement, removeItem } = this.props.value;
-
     return (
       <div className="carditems-container">
         <div className="carditems-img-wrapper">
@@ -27,18 +38,22 @@ class CartItems extends React.Component {
             <div className="carditems-qty">
               <span className="carditems-pcs">{count}pcs</span>
               <div className="carditems-toggle">
-                <span
-                  className="carditems-up"
-                  onClick={() => {
-                    return increment(id);
-                  }}
-                >
-                  <i className="fas fa-sort-up"></i>
+                <span className="carditems-up">
+                  {this.state.checked ? (
+                    <i
+                      className="fas fa-sort-up"
+                      onClick={() => {
+                        increment(id);
+                        this.handleQty();
+                      }}
+                    ></i>
+                  ) : null}
                 </span>
                 <span
                   className="carditems-down"
                   onClick={() => {
-                    return decrement(id);
+                    decrement(id);
+                    this.handleQty();
                   }}
                 >
                   <i className="fas fa-sort-down special-down"></i>

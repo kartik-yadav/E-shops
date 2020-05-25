@@ -8,8 +8,18 @@ class ProductProvider extends Component {
     products: [],
     detailProduct: detailProduct,
     cart: [],
-    modalOpen: false,
-    modalProduct: detailProduct,
+    formData: {
+      firstName: "",
+      lastName: "",
+      address: "",
+      addressSecond: "",
+      country: "",
+      city: "",
+      zipCode: "",
+      pNo: "",
+    },
+    discount: 0,
+    shipping: 0,
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0,
@@ -42,6 +52,49 @@ class ProductProvider extends Component {
     this.setState(() => {
       return { products };
     });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    let formData = {
+      firstName: "",
+      lastName: "",
+      address: "",
+      addressSecond: "",
+      country: "",
+      city: "",
+      zipCode: "",
+      pNo: "",
+    };
+    formData.firstName = document.getElementById("fname").value;
+    formData.lastName = document.getElementById("lname").value;
+    formData.address = document.getElementById("add").value;
+    formData.addressSecond = document.getElementById("adds").value;
+    formData.country = document.getElementById("ctry").value;
+    formData.city = document.getElementById("city").value;
+    formData.zipCode = document.getElementById("zip").value;
+    formData.pNo = document.getElementById("pno").value;
+
+    this.setState(() => {
+      return {
+        formData: formData,
+      };
+    });
+  };
+
+  displaySubmit = () => {
+    console.log(this.state.formData);
+  };
+
+  changeModel = () => {
+    console.log("hello");
+    const { img, imgs } = this.state.detailProduct;
+    let modelText = document.getElementById("mdl").value.toLowerCase();
+    if (modelText.includes("white")) {
+      document.getElementById("cimg").src = imgs;
+    } else {
+      document.getElementById("cimg").src = img;
+    }
   };
 
   getItem = (id) => {
@@ -108,12 +161,56 @@ class ProductProvider extends Component {
     }
   };
 
+  addShippingFree = () => {
+    let shipping = 0;
+
+    this.setState(() => {
+      return {
+        shipping: shipping,
+      };
+    }, this.addTotals);
+  };
+
+  addShippingPaid = () => {
+    let shipping = 20;
+
+    this.setState(() => {
+      return {
+        shipping: shipping,
+      };
+    }, this.addTotals);
+  };
+
+  addDiscount = () => {
+    let discount = 0;
+    let value = document.getElementById("vchr").value;
+    if (value.includes(100)) {
+      discount = 100;
+    } else if (value.includes(50)) {
+      discount = 50;
+    } else if (value.includes(20)) {
+      discount = 20;
+    } else if (value.includes(10)) {
+      discount = 10;
+    } else {
+      discount = 0;
+    }
+
+    this.setState(() => {
+      return {
+        discount: discount,
+      };
+    }, this.addTotals);
+  };
+
   getTotals = () => {
     let subTotal = 0;
     this.state.cart.map((item) => (subTotal += item.total));
     const tempTax = subTotal * 0.1;
     const tax = parseFloat(tempTax.toFixed(2));
-    const total = subTotal + tax;
+    const discount = this.state.discount;
+    const shipping = this.state.shipping;
+    const total = subTotal + tax - discount + shipping;
     return {
       subTotal,
       tax,
@@ -123,18 +220,13 @@ class ProductProvider extends Component {
 
   addTotals = () => {
     const totals = this.getTotals();
-    this.setState(
-      () => {
-        return {
-          cartSubTotal: totals.subTotal,
-          cartTax: totals.tax,
-          cartTotal: totals.total,
-        };
-      },
-      () => {
-        // console.log(this.state);
-      }
-    );
+    this.setState(() => {
+      return {
+        cartSubTotal: totals.subTotal,
+        cartTax: totals.tax,
+        cartTotal: totals.total,
+      };
+    });
   };
 
   removeItem = (id) => {
@@ -178,11 +270,17 @@ class ProductProvider extends Component {
           ...this.state,
           handleDetail: this.handleDetail,
           handleChange: this.handleChange,
+          handleSubmit: this.handleSubmit,
+          changeModel: this.changeModel,
+          displaySubmit: this.displaySubmit,
           addToCart: this.addToCart,
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,
           clearCart: this.clearCart,
+          addDiscount: this.addDiscount,
+          addShippingFree: this.addShippingFree,
+          addShippingPaid: this.addShippingPaid,
         }}
       >
         {this.props.children}

@@ -21,7 +21,7 @@ class Home extends React.Component {
                     onKeyUp={() => value.handleChange()}
                     placeholder="Search..."
                   />
-                  <button className="btn-dark">Submit</button>
+                  <button className="btn-dark home-button">Submit</button>
                 </div>
               </div>
             );

@@ -33,3 +33,30 @@
     margin-left: 180px;
   }
 }
+
+@media (max-width: 768px) {
+  .confirmed-btn {
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmed {
+    &-wrapper {
+      height: 40vh;
+    }
+
+    &-h2 {
+      font-size: 1.5rem;
+    }
+
+    &-p {
+      width: 300px;
+      margin: 10px auto;
+    }
+
+    &-btn {
+      margin-left: 60px;
+    }
+  }
+}
